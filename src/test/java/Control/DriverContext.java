@@ -1,4 +1,4 @@
-package Controller;
+package Control;
 
 import Constant.Navegador;
 import org.openqa.selenium.WebDriver;
@@ -15,17 +15,17 @@ public class DriverContext {
         DriverContext.tipoNavegador = tipoNavegador;
     }
 
-    public static void setUp(Navegador nav){
+    public static void setUp(Navegador nav, String url){
         setTipoNavegador(nav);
         System.out.println("Driver context --> Navegador " +nav );
-        driverManager.resolveDriver(nav);
+        driverManager.resolverDriver(nav, url);
     }
 
     public static WebDriver getDriver (){
         return driverManager.getDriver();
     }
 
-    public static void quiDriver (){
+    public static void quitDriver (){
         if(driverManager != null){
             driverManager.getDriver().quit();
         }

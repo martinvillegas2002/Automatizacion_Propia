@@ -1,4 +1,4 @@
-package Controller;
+package Control;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -9,7 +9,7 @@ public class BaseController {
     private WebDriver driver;
     private WebDriverWait wait; //Poner tiempo de espera antes de que el robot busque. Para darle tiempo
 
-//CONSTRUCTOR. Para evitar que este vacio
+//CONSTRUCTOR. Para evitar que este vacio el driver
     public BaseController(WebDriver driver) {
         this.driver = DriverContext.getDriver();
         if(this.driver != null){
