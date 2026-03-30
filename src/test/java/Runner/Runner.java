@@ -6,12 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resource/Features",
+        features = "src/test/resources/Features",
         glue = {"StepDefinition"}, //  Se hace referecnia a una carpeta completa
-        plugin = {"pretty", "html.target/cucumber-report.html"},
+        plugin = {"pretty", "html:target/cucumber-report.html"},
         monochrome = true,
         tags= "@testCase_1"
-
 )
 public class Runner {
 }

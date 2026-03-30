@@ -9,4 +9,8 @@ Scenario: validar login
   And ingresar el usuario "student"
   And ingresar la pass "Password123"
   When presiono el boton Submit
-  Then se valida el mensaje "Logged In Successfully"
+  Then se valida el mensaje Logged In Successfully
+
+
+
+

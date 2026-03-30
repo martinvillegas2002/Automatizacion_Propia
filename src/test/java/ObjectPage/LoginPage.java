@@ -1,5 +1,6 @@
 package ObjectPage;
 
+import Control.BaseController;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,8 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
-public class LoginPage {
-
+public class LoginPage extends BaseController{
     private WebDriver driver;
 
     @FindBy(id = "username")
@@ -20,18 +20,17 @@ public class LoginPage {
     @FindBy(xpath = "//button[contains(text(),'Submit')]")
     private WebElement btnSubmit;
 
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this); //Inicializa los elementos para identificar los elementos web
-    }
-
 
     //Funciones publicas para usarlas en otras partes
     //el try catch eviat que el programa se caiga cuando la pagina cambie
     public void escribirUsername(String nUsuario){
         try{
-            this.nombreUsuario.clear(); //DEJA LA CAJA DE TEXTO EN BLANCO
-            this.nombreUsuario.sendKeys(nUsuario); //RECIBE "Student". Feature -> StepDefinition -> ObjectPage
+            if(visualizarElemento(this.nombreUsuario, 10)) {
+                this.nombreUsuario.clear(); //DEJA LA CAJA DE TEXTO EN BLANCO
+                this.nombreUsuario.sendKeys(nUsuario); //RECIBE "Student". Feature -> StepDefinition -> ObjectPage
+            }else{
+                fail("No se encuentra el campo nombre de usuario en la pagina");
+            }
 
         }catch(Exception e){
             fail("Error al escribir el campo de usuario" + e.getMessage());

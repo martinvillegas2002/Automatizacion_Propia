@@ -1,5 +1,6 @@
 package StepDefinition;
 
+import ObjectPage.HomePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,17 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginDefinition {
-    private LoginPage loginPage; //BUSCAAAAR¡¡¡ pero segun yo se crea una instancia de dicha clase para usarla aca PARA USAR FUNCIONES PUBLICAS
-    private WebDriver driver;
-
-    @Given("abrir el navegador en la url {string}")
-    public  void abrirNavegador(String url) {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get(url);
-        loginPage = new LoginPage(driver);
-    }
+    private LoginPage loginPage = new LoginPage();
 
     @And("ingresar el usuario {string}")
     public void ingresarElUsuario(String nombreUsuario) {
@@ -40,8 +31,4 @@ public class LoginDefinition {
 
     }
 
-    @Then("se valida el mensaje {string}")
-    public void seValidaElMensaje(String arg0) {
-
-    }
 }

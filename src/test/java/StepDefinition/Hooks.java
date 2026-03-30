@@ -40,7 +40,7 @@ public class Hooks {
         if(this.scenario.isFailed()){
             generarEvidencia("[FAIL] Step ScreenShots");
         }else if(Hooks.tomarCapturaPantalla.equalsIgnoreCase("fullEvidence")){
-            generarEvidencia("[SUCCES] Step ScreenShots");
+            generarEvidencia("[SUCCESS] Step ScreenShots");
 
         }
     }

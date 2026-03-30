@@ -1,5 +1,5 @@
 package Constant;
 
 
-public enum Navegador{firefox,Chrome,Edge,Safari};
+public enum Navegador{Firefox,Chrome,Edge,Safari};
 
