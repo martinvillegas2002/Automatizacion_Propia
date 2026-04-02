@@ -1,0 +1,41 @@
+package ObjectPage;
+
+import Control.BaseController;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
+
+public class DashboardPage extends BaseController {
+
+    public DashboardPage(){
+        super();
+    }
+
+    private WebDriver driver;
+
+    public boolean verificarVisibilidadMenu(String nombreMenu){
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        String xpathDinamico = "//span[text()='" + nombreMenu + "']";
+        List<WebElement> elementosEncontrados = Control.DriverContext.getDriver().findElements(By.xpath(xpathDinamico));
+
+        if(elementosEncontrados.size() > 0){
+            System.out.println("DEBUG: El menú ["+ nombreMenu+ "] est VISIBLE ");
+            return true;
+        }else{
+            System.out.println("DEBUG: El menú [" + nombreMenu + "] está OCULTO (Seguridad activada).");
+            return false;
+        }
+    }
+
+
+
+}

@@ -51,6 +51,8 @@ public class BaseController {
         }
     }
 
+
+
 // Funcion reeutlizable para hacer click
     public void clickearElemento(WebElement elemento){
         if(visualizarElemento(elemento, Constant.TIME_DISPLAY)){

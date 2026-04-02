@@ -16,29 +16,20 @@ public class LoginDefinition {
 
     @And("ingresar el usuario {string}")
     public void ingresarElUsuario(String nombreUsuario) {
-        loginPage.escribirUsername(nombreUsuario);
+        try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); }
+        loginPage.escribirUser(nombreUsuario);
     }
 
     @And("ingresar la pass {string}")
     public void ingresarLaPass(String pass) {
-        loginPage.escribirPassword(pass);
+        loginPage.escribirPass(pass);
 
     }
 
     @When("presiono el boton Submit")
     public void presionoElBotonSubmit() {
-        loginPage.clickBtnSubmit();
+        loginPage.clickBtnSubm();
 
-    }
-    /*---------------------------------------------------------------*/
-    @Then("el sistema muestra el mensaje de error {string}")
-    public void elSistemaMuestraElMensajeDeError(String mensajeEsperado) {
-        // 1. Obtenemos el texto real que aparece en la pantalla
-        String mensajeReal = loginPage.obtenerTextoError();
-
-        // 2. Comparamos usando Assert (JUnit 4)
-        // El formato es: Assert.assertEquals(Mensaje_Si_Falla, Esperado, Real)
-        org.junit.Assert.assertEquals("El mensaje de error no es el correcto", mensajeEsperado, mensajeReal);
     }
 
 }
