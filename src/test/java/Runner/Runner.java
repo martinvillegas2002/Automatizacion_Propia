@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         glue = {"StepDefinition"}, //  Se hace referecnia a una carpeta completa
         plugin = {"pretty", "html:target/cucumber-report.html"},
         monochrome = true,
-        tags= "@TEST_OrangeHRM_001"
+        tags= "@TEST_OrangeHRM_004"
 )
 public class Runner {
 }

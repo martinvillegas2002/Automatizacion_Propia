@@ -3,3 +3,22 @@ Proximos pasos:
 -Pasar funciones de Login a BaseController para REEUTILIZAR CODIGO
 -Ver funciones que tiene francisco minuto 10:15 Ultimo video
 -Hacer Test Table de pagina web
+
+DIFERENCIA TRY CATCH Y WEBDRVERWAIT
+1. WebDriverWait (El Esperador Inteligente)
+El WebDriverWait es la acción de quedarte mirando a la puerta de la cafetería.
+Le dices al robot: "Mira la pantalla fijamente por un máximo de 5 segundos. Chequea cada medio segundo si ya apareció la alerta roja".
+
+Si la alerta aparece al segundo 1, el robot avanza de inmediato (no se queda esperando los otros 4 segundos).
+
+Si pasan los 5 segundos y no aparece nada, el robot se rinde y lanza una explosión (una excepción llamada TimeoutException).
+
+En resumen: Su único trabajo es gestionar el tiempo y sincronizar al robot con la velocidad de la página web.
+
+
+
+2. try-catch (El Casco Salvavidas)
+El try-catch no espera nada, el tiempo no le importa. Es simplemente un casco salvavidas para manejar errores de Java.
+Le dices a Java: "Intenta (try) hacer esta línea de código. Si por alguna razón esa línea explota, no detengas el programa abruptamente; atrapa (catch) la explosión y haz lo que yo te diga".
+
+En resumen: Su único trabajo es manejar el accidente después de que ocurre.

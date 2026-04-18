@@ -16,6 +16,7 @@ public class DashboardPage extends BaseController {
 
     private WebDriver driver;
 
+    //Metodo para ver si es visible elemento del Dashboard
     public boolean verificarVisibilidadMenu(String nombreMenu){
 
         try {
@@ -35,6 +36,24 @@ public class DashboardPage extends BaseController {
             return false;
         }
     }
+
+    //Metodo para seleccionar algo del Dashboard
+    public void clickMenuLateral(String nombreMenu){
+
+        try{Thread.sleep(3000);}catch(InterruptedException e){e.printStackTrace();}
+
+        //Usamos el path dinamico
+        String xpathDinamico = "//span[text()='"+ nombreMenu +"']";
+        Control.DriverContext.getDriver().findElement(By.xpath(xpathDinamico)).click();
+
+        //Pausa necesaria para que cargue
+        try{
+            Thread.sleep(2000);
+        } catch(InterruptedException e){
+            e.printStackTrace();
+        }
+    }
+
 
 
 
